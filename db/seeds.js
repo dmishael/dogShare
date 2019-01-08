@@ -1,4 +1,4 @@
-const dog = require('../models/dog')
+const dog = require('../models/Dog')
 
 let newDogs = [
     {
