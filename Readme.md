@@ -1,0 +1,1 @@
+The app is a website that connects musicians and song writers. The Musician will post his or her song/beat etc..(through a link) and songwriters can share their best lyrics for a price. I would get a cut maybe 10% but the idea is to link songwriters and musicians. There can be reviews for each musician and songwriter as well as comments if made public.
