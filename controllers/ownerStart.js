@@ -1,8 +1,11 @@
-dog = require('../models/dog')
+const Dog = require('../models/Dog')
+
 const ownerStartController = {
     index: (req,res) => {
-        dog.find({}).then((dogs) => {
+        Dog.find({}).then((dogs) => {
             res.send(dogs)
         })
     }
 }
+
+module.exports = ownerStartController
