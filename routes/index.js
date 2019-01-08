@@ -4,4 +4,5 @@ const ownerStartController = require('../controllers/ownerStart')
 
 router.get('/', ownerStartController.index)
 
+
 module.exports = router
