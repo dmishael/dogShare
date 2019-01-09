@@ -1,5 +1,6 @@
 const Appointment = require('../models/Appointment')
 const UserProfile = require('../models/UserProfile')
+const SitterComment = require('../models/UserProfile')
 
 const ownerStartController = {
     index: (req,res) => {
@@ -7,10 +8,20 @@ const ownerStartController = {
             res.render('ownerview/home', {profile})
         })
         
-    }
+    },
+    new: (req,res) => {
+        Appointment.find({}).then(appointment => {
+            res.render('ownerview/appointment', {appointment})
+        })
+
+    },
+    post: (req,res) => {
+        SitterComment.find({}).then(comment => {
+            res.render('ownerview/appointment', {comment})
+        })
 
 }
-
+}
 
 /*
     index: (req,res) => {
