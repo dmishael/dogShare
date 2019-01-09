@@ -6,7 +6,11 @@ const Appointment = new Schema ({
     startDate: String,
     endDate: String,
     owner: String,
-    dog: String
+    dog: String,
+    sitterComment: [{
+        type: Schema.Types.ObjectId,
+        ref: "sitterComment"
+    }]
 })
 
 module.exports = mongoose.model("Appointment", Appointment)

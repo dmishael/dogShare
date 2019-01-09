@@ -1,17 +1,18 @@
-const Dog = require('../models/Dog')
-const Owner = require('../models/Owner')
 const Appointment = require('../models/Appointment')
-const DogProfile = require('../models/DogProfile')
-
+const UserProfile = require('../models/UserProfile')
 
 const ownerStartController = {
-    new: (req,res) => {
-        Owner.find({}).then(owner => {
-            res.render('ownerview/feed', {owner})
+    index: (req,res) => {
+        UserProfile.find({}).then(profile => {
+            res.render('ownerview/home', {profile})
         })
         
-    },
+    }
 
+}
+
+
+/*
     index: (req,res) => {
         Dog.find({}).then(dog => {
             res.render('ownerview/post', {dog})
@@ -32,9 +33,9 @@ const ownerStartController = {
         })
         
     }
-    }
+    
 
-/*
+
 const ownerStartController = {
     index: (req,res) => {
         const dogID = req.params.id
