@@ -1,23 +1,53 @@
 const Dog = require('../models/Dog')
 const Owner = require('../models/Owner')
-//const Appointment = require('../models/Appointment')
+const Appointment = require('../models/Appointment')
+const SitterExitTicket = require('../models/SitterExitTicket')
+const DogProfile = require('../models/DogProfile')
 
 Owner.deleteMany({})
 .then(() => { 
-    Owner.create({
+    const newApp = Appointment.create({
+        startDate: 'January 10, 2019',
+        endDate: 'January 12, 2019',
+        owner: [],
+        dog: []
+    }).then((appointment) => {
+    const newOwner = Owner.create({
         name: 'Daniel',
         sitter: 'Bill',
         address: '799 Virginia Circle',
         dog: []
-    }).then((newOwner) => {  
+    }).then((owner) => {  
     const newDog = Dog.create({
         name: 'Rae',
         weight: 50,
-        breed: 'Mut'
+        breed: 'Mut',
+        profile: [{}]
     }).then((newdog) => {
-    newOwner.dog.push(newdog)
+    const newProfile = DogProfile.create({
+        dogName: 'Rae',
+        dogBehavior: [],
+        accidents: [],
+        shed: []
+        }).then((profile) => {
+    const sitterXT = SitterExitTicket.create({
+        dogName: 'Rae',
+        dogBehavior: 10,
+        accidents: 1,
+        shed: 2
+    }).then((sitterxt) => {
+    appointment.dog.push(newdog)
+    appointment.owner.push(owner)
+    owner.dog.push(newdog)
+    profile.dogBehavior.push(sitterxt.dogBehavior)
+    profile.accidents.push(sitterxt.accidents)
+    profile.shed.push(sitterxt.shed)
+        })
+    })
+}) 
 })
-    })}) 
+})
+})
 
 //     Appointment.create({
 //         startDate: 'January, 12 2019',
