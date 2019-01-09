@@ -4,9 +4,9 @@ const Dog = require('../models/Dog')
 
 const dogProfile = new Schema ({
     dogName: String,
-    dogBehavior: Number,
-    accidents: Number,
-    shed: Number
+    dogBehavior: [],
+    accidents: [],
+    shed: []
 })
 
 module.exports = mongoose.model("dogProfile", dogProfile)

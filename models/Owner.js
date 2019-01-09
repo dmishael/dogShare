@@ -6,7 +6,7 @@ const Owner = new Schema ({
     name: String,
     sitter: String,
     address: String,
-    dog: []
+    dog: String
 })
 
 module.exports = mongoose.model("Owner", Owner)

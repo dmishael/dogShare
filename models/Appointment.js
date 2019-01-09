@@ -5,8 +5,8 @@ const Schema = mongoose.Schema
 const Appointment = new Schema ({
     startDate: String,
     endDate: String,
-    owner: [],
-    dog: []
+    owner: String,
+    dog: String
 })
 
 module.exports = mongoose.model("Appointment", Appointment)
