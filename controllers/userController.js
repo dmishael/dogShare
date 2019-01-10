@@ -1,6 +1,6 @@
-const Appointment = require('../models/Appointment')
+
 const UserProfile = require('../models/UserProfile')
-const SitterComment = require('../models/UserProfile')
+
 
 const ownerStartController = {
     
@@ -19,7 +19,7 @@ const ownerStartController = {
         UserProfile.create({
             name: req.body.name,
             address: req.body.address,
-            dogName: req.body.dogName,
+            dogName: req.body.dogName
         }).then(userprofile => {
             res.redirect('/')
         })
