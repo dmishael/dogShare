@@ -5,11 +5,7 @@ const Schema = mongoose.Schema
 const User = new Schema ({
     name: String,
     address: String,
-    dog: String,
-    appointment: [{
-        type: Schema.Types.ObjectId,
-        ref: "appointment"
-    }]
+    dogName: String,
 })
 
 module.exports = mongoose.model("User", User)

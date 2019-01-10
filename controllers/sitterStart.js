@@ -1,11 +1,13 @@
-const sitterET = require('../models/SitterExitTicket')
+const SitterComment = require('../models/SitterComment')
 
 
 const sitterStartController = {
+    
     new: (req,res) => {
-        sitterET.find({}).then(SET => {
-            res.render('sitterView/sitterExit', {SET})
+        SitterComment.find({}).then(Comment => {
+            res.render('ownerview/appointment', {Comment})
         })
+
     }
 }
 

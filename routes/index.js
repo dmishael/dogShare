@@ -1,11 +1,22 @@
 const express = require('express')
 const router = express.Router()
-const ownerStartController = require('../controllers/ownerStart')
+const ownerStartController = require('../controllers/userController')
 
 
-router.get('/', ownerStartController.index)
 router.get('/new', ownerStartController.new)
-router.get('/new/:id', StartController.new)
+
+
+router.post('/', ownerStartController.create)
+router.get('/', ownerStartController.index)
+
+// router.edit('/', ownerStartController.edit)
+
+
+// router.get('/:id', ownerStartController.show)
+
+
+
+// router.get('/user', ownerStartController.)
 
 
 module.exports = router
