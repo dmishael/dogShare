@@ -37,6 +37,16 @@ const ownerStartController = {
         const userProfile = req.params.id
         // console.log(newslinkId)
         res.redirect('/')
+    },
+    delete: (req, res) => {
+        const userId = req.params.id
+        console.log(userId)
+        UserProfile.findByIdAndRemove(userId)
+            .then(() => {
+                res.redirect('/')
+            }).catch((error) => {
+                console.log(error)
+            })
     }
 }
 

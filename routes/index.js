@@ -8,6 +8,7 @@ const sitterController = require('../controllers/SitterController')
 router.get('/new', ownerStartController.new)
 router.post('/', ownerStartController.create)
 router.get('/', ownerStartController.index)
+router.delete('/:id', ownerStartController.delete)
 
 // router.edit('/', ownerStartController.edit)
 // router.get('/:id', ownerStartController.show)
