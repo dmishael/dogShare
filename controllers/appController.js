@@ -1,17 +1,17 @@
 const Appointment = require('../models/Appointment')
 
 const appController = {
-    
-    index: (req,res) => {
+
+    index: (req, res) => {
         Appointment.find({}).populate("sitterComment").then((appointment) => {
             // const comments = appointment.sitterComment
             // , comments:comments
-            res.render('ownerview/index', {appointment: appointment})
+            res.render('ownerview/index', { appointment: appointment })
 
         })
     },
-        
-    new: (req,res) => {
+
+    new: (req, res) => {
         res.render('ownerView/appointment')
     },
 
@@ -29,28 +29,28 @@ const appController = {
     edit: (req, res) => {
         const appId = req.params.id
         console.log(appId)
-        res.render('ownerview/edit', {appId})
+        res.render('ownerview/edit', { appId })
     },
 
-    update: (req,res) => {
+    update: (req, res) => {
         const appId = req.params.id
-        Appointment.findByIdAndUpdate(appId, req.body, {new: true}).then((newApp) => {
+        Appointment.findByIdAndUpdate(appId, req.body, { new: true }).then((newApp) => {
             res.redirect('/apps')
         })
-        },
+    },
 
 
-    delete: (req,res) => {
+    delete: (req, res) => {
         const appId = req.params.id
         console.log(appId)
         Appointment.findOneAndDelete(appId)
-        .then(() => {
-            res.redirect('/apps')
-        }).catch((error) => {
-            console.log(error)
-        })
+            .then(() => {
+                res.redirect('/apps')
+            }).catch((error) => {
+                console.log(error)
+            })
     }
 }
 
-module.exports = appController 
+module.exports = appController
 

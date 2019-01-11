@@ -23,6 +23,7 @@ router.delete('/apps/:id', appController.delete)
 
 router.get('/:id/appointment', sitterController.new)
 router.post('/:id', sitterController.create)
+router.delete('/comments/:id', sitterController.delete)
 
 module.exports = router
 

@@ -3,21 +3,31 @@
 
 {{#each appointment}}
 
-                {{startDate}}
-                {{endDate}}
-                {{owner}}
-                {{dog}}
-                <p>{{sitterComment}}</p>
+{{startDate}}
+{{endDate}}
+{{owner}}
+{{dog}}
+<form action="/apps/{{_id}}?_method=DELETE" method="POST">
+    <button type="submit" class="btn"> Delete </button></form>
 
+{{#each sitterComment}}
+<p>{{name}}</p>
+<p>{{email}}</p>
+<p>{{cellNumber}}</p>
+<p>{{comments}}</p>
 
+{{log _id}}
+<form action="/comments/{{_id}}?_method=DELETE" method="POST">
+    <button type="submit" class="btn"> Delete Comment </button></form>
 
-                <a href="{{_id}}/appointment"><button>Sign Up</button> </a>
-                {{!-- //the id is referred to by the handlebars appointment id --}}
-                <div>
-                <form action="/apps/{{_id}}?_method=DELETE" method="POST">
-                <button type="submit" class="btn"> Delete </button></form>
-                <a href="{{_id}}/edit"><button>Edit</button> </a>
-                </div>
+{{/each}}
+
+<a href="{{_id}}/appointment"><button>Sign Up</button> </a>
+{{!-- //the id is referred to by the handlebars appointment id --}}
+<div>
+
+    <a href="{{_id}}/edit"><button>Edit</button> </a>
+</div>
 
 
 
@@ -25,5 +35,5 @@
 
 {{!-- {{#each comments}}
 {{name}}
-{{cellNumber}}              
+{{cellNumber}}
 {{/each}} --}}

@@ -3,15 +3,15 @@ const Appointment = require('../models/Appointment')
 
 
 const sitterController = {
-    
-    index: (req,res) => {
+
+    index: (req, res) => {
         sitterComment.find({}).then(appointment => {
-            res.render('ownerview/index', {appointment})
+            res.render('ownerview/index', { appointment })
         })
     },
-        
-    new: (req,res) => {
-        res.render('sitterView/sitterComment', { 
+
+    new: (req, res) => {
+        res.render('sitterView/sitterComment', {
             appointmentId: req.params.id
         })
     },
@@ -22,17 +22,26 @@ const sitterController = {
             email: req.body.email,
             cellNumber: req.body.cellNumber,
             comments: req.body.comments
-        }).then( comment => {
+        }).then(comment => {
             Appointment.findById(req.params.id).then(appointment => {
                 console.log(comment)
                 appointment.sitterComment.push(comment);
 
                 appointment.save();
                 res.redirect('/apps')
-                
+
             });
-            
+
         })
+    },
+    delete: (req, res) => {
+        const commentId = req.params.id
+        sitterComment.findByIdAndRemove(commentId)
+            .then(() => {
+                res.redirect('/apps')
+            }).catch((error) => {
+                console.log(error)
+            })
     }
 }
 
