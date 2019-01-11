@@ -1,5 +1,5 @@
 <h1>appointments</h1>
-{{!-- <a href="/appform"><button>make appointment</button></a> --}}
+<a href="/appform"><button>make appointment</button></a>
 
 {{#each appointment}}
 
@@ -10,50 +10,67 @@
                 <span class="card-title">
                     {{startDate}} -
                     {{endDate}} </span>
-                <p>{{owner}}</p>
-                <p>{{dog}}</p>
+                <p>Owner - {{owner}}</p>
+                <p>Dog - {{dog}}</p>
             </div>
             <div class="card-action">
-                <a href="#">
-                    <form action="/apps/{{_id}}?_method=DELETE" method="POST">
-                        <button type="submit" class="btn"> Delete </button></form>
-                </a>
+                
+                    <form class="btn" action="/apps/{{_id}}?_method=DELETE" method="POST">
+                        <button type="submit"> Delete </button></form>
+
+                    <a href="{{_id}}/appointment" class="btn">Sign Up </a>
+                    
+                
             </div>
         </div>
     </div>
 </div>
 
 
-{{!-- {{startDate}}
-{{endDate}}
-{{owner}}
-{{dog}} --}}
+
 
 
 {{#each sitterComment}}
-<p>{{name}}</p>
-<p>{{email}}</p>
-<p>{{cellNumber}}</p>
-<p>{{comments}}</p>
 
-{{log _id}}
-<form action="/comments/{{_id}}?_method=DELETE" method="POST">
-    <button type="submit" class="btn"> Delete Comment </button></form>
 
-{{/each}}
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card green darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">
+                    {{name}}
+                </span>
+                <p>Email - {{email}}</p>
+                <p>Cell - {{cellNumber}}</p>
+                <p>Comment - {{comments}}</p>
+            </div>
+            <div class="card-action">
+                
+                    {{!-- {{log _id}} --}}
+                    
+                    <form class="btn" action="/comments/{{_id}}?_method=DELETE" method="POST">
+                        <button type="submit"> Delete Comment </button></form>
 
-<a href="{{_id}}/appointment"><button>Sign Up</button> </a>
-{{!-- //the id is referred to by the handlebars appointment id --}}
-<div>
 
-    <a href="{{_id}}/edit"><button>Edit</button> </a>
+                    
+
+
+                    <a href="{{_id}}/edit" class="btn">Edit </a>
+
+
+                
+            </div>
+        </div>
+    </div>
 </div>
 
 
 
+
 {{/each}}
 
-{{!-- {{#each comments}}
-{{name}}
-{{cellNumber}}
-{{/each}} --}}
+
+
+
+{{/each}}
+

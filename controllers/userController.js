@@ -5,7 +5,7 @@ const UserProfile = require('../models/UserProfile')
 const ownerStartController = {
 
     index: (req, res) => {
-        UserProfile.find({}).then(profile => {
+        UserProfile.find({}).populate("User").then(profile => {
             res.render('ownerview/home', { profile })
         })
 
