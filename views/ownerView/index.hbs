@@ -1,4 +1,4 @@
-<h1>appointments</h1>
+<h1>Appointments</h1>
 <a href="/appform"><button>make appointment</button></a>
 
 {{#each appointment}}
@@ -14,15 +14,15 @@
                 <p>Dog - {{dog}}</p>
             </div>
             <div class="card-action">
-                
-                    <form class="btn" action="/apps/{{_id}}?_method=DELETE" method="POST">
-                        <button type="submit"> Delete </button></form>
 
-                    <a href="{{_id}}/appointment" class="btn">Sign Up </a>
+                <form class="btn" action="/apps/{{_id}}?_method=DELETE" method="POST">
+                    <button type="submit"> Delete </button></form>
 
-                    <a href="{{_id}}/edit" class="btn">Edit </a>
-                    
-                
+                <a href="{{_id}}/appointment" class="btn">Sign Up </a>
+
+                <a href="{{_id}}/edit" class="btn">Edit </a>
+
+
             </div>
         </div>
     </div>
@@ -47,20 +47,20 @@
                 <p>Comment - {{comments}}</p>
             </div>
             <div class="card-action">
-                
-                    {{!-- {{log _id}} --}}
-                    
-                    <form class="btn" action="/comments/{{_id}}?_method=DELETE" method="POST">
-                        <button type="submit"> Delete Comment </button></form>
+
+                {{!-- {{log _id}} --}}
+
+                <form class="btn" action="/comments/{{_id}}?_method=DELETE" method="POST">
+                    <button type="submit"> Delete Comment </button></form>
 
 
-                    
 
 
-                    
 
 
-                
+
+
+
             </div>
         </div>
     </div>
@@ -75,4 +75,3 @@
 
 
 {{/each}}
-
