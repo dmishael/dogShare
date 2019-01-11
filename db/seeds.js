@@ -3,7 +3,7 @@ const SitterComment = require('../models/SitterComment')
 const UserProfile = require('../models/UserProfile')
 
 
-UserProfile.deleteMany({})
+Appointment.deleteMany({})
 .then(() => {
     return Appointment.create({
             startDate: 'January 10, 2019',
