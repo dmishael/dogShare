@@ -3,15 +3,15 @@ const UserProfile = require('../models/UserProfile')
 
 
 const ownerStartController = {
-    
-    index: (req,res) => {
+
+    index: (req, res) => {
         UserProfile.find({}).then(profile => {
-            res.render('ownerview/home', {profile})
+            res.render('ownerview/home', { profile })
         })
-        
+
     },
 
-    new: (req,res) => {
+    new: (req, res) => {
         res.render('ownerView/userProfile')
     },
 
@@ -25,12 +25,12 @@ const ownerStartController = {
         })
     },
 
-    
+
 
     show: (req, res) => {
         const userId = req.params.userId
         UserProfile.findById(userId).then((userId) => {
-          res.render('ownerView/userShow'), {userId}  
+            res.render('ownerView/userShow'), { userId }
         })
     },
     edit: (req, res) => {
@@ -39,7 +39,7 @@ const ownerStartController = {
         res.redirect('/')
     }
 }
-    
+
 /*
     index: (req,res) => {
         Dog.find({}).then(dog => {

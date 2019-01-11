@@ -1,8 +1,8 @@
-const mongoose = require ('../db/connection')
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 
-const Appointment = new Schema ({
+const Appointment = new Schema({
     startDate: String,
     endDate: String,
     owner: String,
