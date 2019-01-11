@@ -50,53 +50,6 @@ const ownerStartController = {
     }
 }
 
-/*
-    index: (req,res) => {
-        Dog.find({}).then(dog => {
-            res.render('ownerview/post', {dog})
-        })
-        
-    },
-       
-    show: (req,res) => {
-        Appointment.find({}).then(appointment => {
-            res.render('ownerview/appointment', {appointment})
-        })
-        
-    },
-    
-    see: (req,res) => {
-        DogProfile.find({}).then(dogProf => {
-            res.render('ownerview/dogProfile', {dogProf})
-        })
-        
-    }
-    
-
-
-const ownerStartController = {
-    index: (req,res) => {
-        const dogID = req.params.id
-        console.log(dogId)
-        Dog.findById(dogId).populate('ratings').then((dogCard) => {
-            const ratings = dogCard.ratings
-            res.render('log/dog', { comments, ratings})
-        })
-        }
-}
-
-
-    create: (req, res) => {
-        UserProfile.create({
-            name: req.body.name,
-            address: req.body.address,
-            dogName: req.body.dogName,
-        }).then(userprofile => {
-            res.redirect(`/${userprofile_id}`)
-        })
-
-
-*/
 module.exports = ownerStartController
 
 
