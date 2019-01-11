@@ -1,7 +1,7 @@
 const SitterComment = require('../models/SitterComment')
 const Appointment = require('../models/Appointment')
 
-const sitterStartController = {
+const appController = {
     
     index: (req,res) => {
         Appointment.find({}).then(appointment => {
@@ -20,10 +20,21 @@ const sitterStartController = {
             owner: req.body.owner,
             dog: req.body.dog
         }).then(appointment => {
-            res.redirect('/newapp')
+            res.redirect('/apps')
+        })
+    },
+
+    delete: (req,res) => {
+        const appId = req.params.id
+        console.log(appId)
+        Appointment.findOneAndDelete(appId)
+        .then(() => {
+            res.redirect('/apps')
+        }).catch((error) => {
+            console.log(error)
         })
     }
 }
 
-module.exports = sitterStartController 
+module.exports = appController 
 
