@@ -4,8 +4,7 @@ const appController = {
 
     index: (req, res) => {
         Appointment.find({}).populate("sitterComment").then((appointment) => {
-            // const comments = appointment.sitterComment
-            // , comments:comments
+            
             res.render('ownerview/index', { appointment: appointment })
 
         })
