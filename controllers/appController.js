@@ -28,7 +28,7 @@ const appController = {
     edit: (req, res) => {
         const appId = req.params.id
         console.log(appId)
-        res.render('ownerview/edit', { appId })
+        res.render('ownerView/edit', { appId })
     },
 
     update: (req, res) => {
