@@ -33,8 +33,7 @@ const sitterController = {
             });
             
         })
-    },
-    show: (res)
+    }
 }
 
 module.exports = sitterController

@@ -4,7 +4,10 @@
 {{#each appointment}}
 
                 {{startDate}}
-                {{comments}}
+                {{endDate}}
+                {{owner}}
+                {{dog}}
+                <p>{{sitterComment}}</p>
 
 
                 <a href="{{_id}}/appointment"><button>Sign Up</button> </a>
@@ -12,8 +15,9 @@
                 <div>
                 <form action="/apps/{{_id}}?_method=DELETE" method="POST">
                 <button type="submit" class="btn"> Delete </button></form>
+                <a href="/{{_id}}/appointment"><button>Edit</button> </a>
                 </div>
 
-                <a href="/{{_id}}/appointment"><button>Edit</button> </a>
+                
 
 {{/each}}

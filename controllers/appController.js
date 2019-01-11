@@ -1,4 +1,3 @@
-const SitterComment = require('../models/SitterComment')
 const Appointment = require('../models/Appointment')
 
 const appController = {
@@ -23,6 +22,18 @@ const appController = {
             res.redirect('/apps')
         })
     },
+
+    // show: (req, res) => {
+
+    // }
+    update: (req, res) => {
+        const appId = req.params.id
+        console.log(req.body)
+        Appointment.findByIdAndUpdate(appId, req.body, {new: true}).then((newApp) => {
+            res.redirect(`/${appId}`)
+        })
+    },
+
 
     delete: (req,res) => {
         const appId = req.params.id
