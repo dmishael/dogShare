@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const ownerStartController = require('../controllers/userController')
 const appController = require('../controllers/appController')
-const sitterController = require('../controllers/SitterController')
+const sitterController = require('../controllers/sitterController')
 
 
 router.get('/new', ownerStartController.new)
