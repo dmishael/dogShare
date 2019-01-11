@@ -1,5 +1,5 @@
 <h1>appointments</h1>
-<a href="/appform"><button>make appointment</button></a>
+{{!-- <a href="/appform"><button>make appointment</button></a> --}}
 
 {{#each appointment}}
 
@@ -10,14 +10,20 @@
                 <p>{{sitterComment}}</p>
 
 
+
                 <a href="{{_id}}/appointment"><button>Sign Up</button> </a>
                 {{!-- //the id is referred to by the handlebars appointment id --}}
                 <div>
                 <form action="/apps/{{_id}}?_method=DELETE" method="POST">
                 <button type="submit" class="btn"> Delete </button></form>
-                <a href="/{{_id}}/appointment"><button>Edit</button> </a>
+                <a href="{{_id}}/edit"><button>Edit</button> </a>
                 </div>
 
-                
+
 
 {{/each}}
+
+{{!-- {{#each comments}}
+{{name}}
+{{cellNumber}}              
+{{/each}} --}}

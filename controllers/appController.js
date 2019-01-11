@@ -3,8 +3,11 @@ const Appointment = require('../models/Appointment')
 const appController = {
     
     index: (req,res) => {
-        Appointment.find({}).then(appointment => {
-            res.render('ownerview/index', {appointment})
+        Appointment.find({}).populate("sitterComment").then((appointment) => {
+            // const comments = appointment.sitterComment
+            // , comments:comments
+            res.render('ownerview/index', {appointment: appointment})
+
         })
     },
         
@@ -23,16 +26,18 @@ const appController = {
         })
     },
 
-    // show: (req, res) => {
-
-    // }
-    update: (req, res) => {
+    edit: (req, res) => {
         const appId = req.params.id
-        console.log(req.body)
-        Appointment.findByIdAndUpdate(appId, req.body, {new: true}).then((newApp) => {
-            res.redirect(`/${appId}`)
-        })
+        console.log(appId)
+        res.render('ownerview/edit', {appId})
     },
+
+    update: (req,res) => {
+        const appId = req.params.id
+        Appointment.findByIdAndUpdate(appId, req.body, {new: true}).then((newApp) => {
+            res.redirect('/apps')
+        })
+        },
 
 
     delete: (req,res) => {

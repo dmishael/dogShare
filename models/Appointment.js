@@ -9,8 +9,8 @@ const Appointment = new Schema ({
     dog: String,
     sitterComment: [{
         type: Schema.Types.ObjectId,
-        ref: "sitterComment"
+        ref: "Comment"
     }]
 })
 
-module.exports = mongoose.model("Appointment", Appointment)
+module.exports = mongoose.model("Appointment", Appointment) 
