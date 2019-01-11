@@ -6,7 +6,7 @@ const ownerStartController = {
 
     index: (req, res) => {
         UserProfile.find({}).populate("User").then(profile => {
-            res.render('ownerview/home', { profile })
+            res.render('ownerView/home', { profile })
         })
 
     },

@@ -6,7 +6,7 @@ const sitterController = {
 
     index: (req, res) => {
         sitterComment.find({}).then(appointment => {
-            res.render('ownerview/index', { appointment })
+            res.render('ownerView/index', { appointment })
         })
     },
 
