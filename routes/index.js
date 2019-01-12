@@ -10,9 +10,6 @@ router.post('/', ownerStartController.create)
 router.get('/', ownerStartController.index)
 router.delete('/:id', ownerStartController.delete)
 
-// router.edit('/', ownerStartController.edit)
-// router.get('/:id', ownerStartController.show)
-// router.get('/user', ownerStartController.)
 
 router.get('/appform', appController.new)
 router.post('/newapp', appController.create)
@@ -29,7 +26,3 @@ router.delete('/comments/:id', sitterController.delete)
 module.exports = router
 
 
-// .get show(read)
-// .patch update  
-// .post create 
-// .delete delete  
