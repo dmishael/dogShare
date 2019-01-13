@@ -9,4 +9,4 @@ Link to my Trello board (MY ERDs and Wireframe prictures are saved in here): htt
 
 Link to my Heroku deployed app: https://lit-woodland-81366.herokuapp.com/
 
-![picture](desktop/IMG_3302.JPG)
+![alt text](/IMG_3302.JPG)
