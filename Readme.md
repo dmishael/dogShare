@@ -8,3 +8,6 @@ If I had more time I would have added exit tickets to for the owner to rate the 
 Link to my Trello board (MY ERDs and Wireframe prictures are saved in here): https://trello.com/b/GqlGXQSs/gaproject-2dogshare
 
 Link to my Heroku deployed app: https://lit-woodland-81366.herokuapp.com/
+
+![GitHub Logo](../downloads/IMG_3301.JPG)
+Format: ![Alt Text](url)
